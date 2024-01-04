@@ -14,7 +14,6 @@ internal enum textView {
 }
 
 internal enum button {
-    internal static let limpar = "Limpar dados"
     internal static let calcular = "Calcular IMC"
 }
 

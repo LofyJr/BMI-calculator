@@ -43,7 +43,7 @@ struct CalculatorView: View {
                 
                 HStack{
                     Button(button.calcular){
-                        calculatorViewModel.resultado()
+                        calculatorViewModel.calcularImc()
                     }
                     .frame(height: 48)
                     .border(.gray)
@@ -53,7 +53,7 @@ struct CalculatorView: View {
                 .padding()
                 
                 VStack{
-                    Text(calculatorViewModel.mostrar)
+                    Text(calculatorViewModel.showResult)
                         .font(.system(size: 16))
                         .frame(alignment: .center)
                 }

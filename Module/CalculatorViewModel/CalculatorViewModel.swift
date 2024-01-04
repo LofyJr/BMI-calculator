@@ -11,7 +11,7 @@ import SwiftUI
 class CalculatorViewModel: ObservableObject {
     @Published var peso: Double = 0.0
     @Published var altura: Double = 0.0
-    @Published var mostrar: String = ""
+    @Published var showResult: String = ""
     
     let formatter: NumberFormatter = {
             let formatter = NumberFormatter()
@@ -19,17 +19,17 @@ class CalculatorViewModel: ObservableObject {
             return formatter
         }()
     
-    func resultado() {
-       let resul = (peso / (altura * altura))
+    func calcularImc() {
+       let resultado = (peso / (altura * altura))
         
-        if resul < 18.5 {
-            mostrar = "Você está na classificação abaixo do peso com valor \(resul) do IMC"
-        } else if resul <= 24.99 && resul >= 18.5 {
-            mostrar = "Você está na classificação peso ideal com valor \(resul) do IMC"
-        } else if resul <= 29.99 && resul >= 25 {
-            mostrar = "Você está na classificação Sobrepeso com valor \(resul) do IMC"
+        if resultado < 18.5 {
+            showResult = "Você está na classificação abaixo do peso com valor \(resultado) do IMC"
+        } else if resultado <= 24.99 && resultado >= 18.5 {
+            showResult = "Você está na classificação peso ideal com valor \(resultado) do IMC"
+        } else if resultado <= 29.99 && resultado >= 25 {
+            showResult = "Você está na classificação Sobrepeso com valor \(resultado) do IMC"
         } else {
-            mostrar = "Você está na classificação Obesidade com valor \(resul) do IMC"
+            showResult = "Você está na classificação Obesidade com valor \(resultado) do IMC"
         }
     }
 }
